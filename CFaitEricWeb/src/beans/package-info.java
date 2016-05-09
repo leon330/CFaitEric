@@ -1,8 +1,8 @@
 /**
- * 
+ * Déclaration des beans
  */
 /**
  * @author SSDEV
  *
  */
-package plop;
+package beans;
