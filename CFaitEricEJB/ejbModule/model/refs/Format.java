@@ -9,7 +9,7 @@ public enum Format
 
 	@Getter
 	@Setter
-	String libelle;
+	private String libelle;
 
 	private Format(String lib)
 	{
