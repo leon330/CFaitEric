@@ -1,4 +1,4 @@
-package model.managers;
+package net.model.managers;
 
 import java.io.Serializable;
 

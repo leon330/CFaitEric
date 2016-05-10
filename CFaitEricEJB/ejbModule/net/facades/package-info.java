@@ -5,4 +5,4 @@
  * @author SCH BEILLOEIL Eric
  *
  */
-package model.entities;
+package net.facades;

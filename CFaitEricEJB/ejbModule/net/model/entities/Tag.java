@@ -1,4 +1,4 @@
-package model.entities;
+package net.model.entities;
 
 import java.io.Serializable;
 
@@ -22,30 +22,23 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "libelleRes")
-@ToString(of = { "libelleRes", "hauteur", "largueur" })
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+@EqualsAndHashCode(of = "libelleTag")
+@ToString(of = "libelleTag")
 @Builder
 @Entity
-@Table(name = "RESOLUTION")
-public class Resolution implements Serializable
-{ 
+@Table(name = "TAG")
+/**
+ * On n'hérite pas d'AbstractEntity ici car l'identifiant est le TAG.
+ * 
+ * @author eric.gabriac
+ *
+ */
+public class Tag implements Serializable {
 	/**
-	 * libéllé correspondant à une résolution
+	 * Nom de référence du tag
 	 */
 	@Id
 	@Column(name = "LIBELLE")
-	String	libelleRes;
-
-	/**
-	 * Hauteur de la résolution
-	 */
-	@Column(nullable = false, name = "HAUTEUR")
-	int		hauteur;
-
-	/**
-	 * Largueur de la résolution
-	 */
-	@Column(nullable = false, name = "LARGUEUR")
-	int		largueur;
+	String libelleTag;
 }

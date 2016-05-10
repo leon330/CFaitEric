@@ -1,4 +1,4 @@
-package main;
+package net.main;
 
 public class Test {
 

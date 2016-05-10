@@ -1,52 +1,43 @@
-package model.entities;
+package net.model.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-import model.refs.Categorie;
-import model.refs.Format;
+import net.commons.AbstractEntity;
+import net.model.refs.Categorie;
+import net.model.refs.Format;
 
 @SuppressWarnings("serial")
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "id")
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = { "laCategorie", "leFormat", "listeTag" })
 @Builder
 @Entity
 @Table(name = "IMAGE")
-public class Image implements Serializable
-{
-	/**
-	 * Id Unique de l'image
-	 */
-
-	@Id
-	@Column(name = "ID")
-	String		id;
+public class Image extends AbstractEntity {
 
 	/**
 	 * Nom de l'image ajoutée en base
 	 */
-	String		nom;
+	@OneToOne
+	WallPaper	image;
 
 	/**
 	 * Catégorie d'appartennance de l'image. une seule catégorie référence une

@@ -5,4 +5,4 @@
  * @author eric.gabriac
  *
  */
-package model.managers;
+package net.commons;

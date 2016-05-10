@@ -5,4 +5,4 @@
  * @author SCH BEILLOEIL Eric
  *
  */
-package model.refs;
+package net.model.refs;

@@ -1,4 +1,4 @@
-package model.commons;
+package net.commons;
 
 import java.io.Serializable;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package model.refs;
+package net.model.refs;
 
 import lombok.Getter;
 import lombok.Setter;

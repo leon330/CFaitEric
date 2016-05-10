@@ -5,4 +5,4 @@
  * @author SSDEV
  *
  */
-package main;
+package net.main;

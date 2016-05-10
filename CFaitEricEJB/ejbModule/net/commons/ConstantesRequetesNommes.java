@@ -1,4 +1,4 @@
-package model.commons;
+package net.commons;
 
 /**
  * Classe de constantes regroupant les constantes pour les requêtes nommées.

@@ -11,7 +11,7 @@ import javax.inject.Named;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.managers.ImageManager;
+import net.model.managers.ImageManager;
 
 @SuppressWarnings("serial")
 @Getter

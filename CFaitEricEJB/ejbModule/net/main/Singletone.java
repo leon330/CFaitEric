@@ -1,4 +1,4 @@
-package main;
+package net.main;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
