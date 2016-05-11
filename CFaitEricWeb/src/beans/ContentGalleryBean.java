@@ -31,9 +31,9 @@ public class ContentGalleryBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		images = new LinkedList<>();
-		images.add("nature1.jpeg");
-		images.add("nature2.jpeg");
-		images.add("nature4.jpeg");
-		images.add("nature7.jpeg");
+		for (int i = 1; i <= 14; i++) {
+			images.add("nature" + i + ".jpeg");
+		}
+
 	}
 }

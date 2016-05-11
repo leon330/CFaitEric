@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -6,34 +6,27 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<h:outputStylesheet library="perso" name="template.css" />
+	<meta http-equiv="Content-Type" content="text/html" />
+	<meta charset="UTF-8" />
 	<h:outputStylesheet library="css" name="bootstrap.css" />
-	<title>Mon template</title>
+	
+	<!-- INCLUDE -->
+	<ui:insert name="stylePerso"/>
+	<!-- INCLUDE -->
+	<ui:insert name="titre" />
 </h:head>
 
 <h:body>
+	<!-- Toute page JSF doit contenir une, et une seule, vue -->
+	<f:view>
+	<!-- Les includes sont des parties importées qui ne pourront pas être changée de l'exterieur du template -->
+		<ui:include src="header.xhtml" />
 
-	<div class="container">
-		<header id="top" class="row">
-			<div class="col-lg-12">
-				<ui:insert name="top">HAUT</ui:insert>
-			</div>
-		</header>
-		<div class="row">
-			<nav id="left" class="col-lg-4">
-				<ui:insert name="left">GAUCHE</ui:insert>
-			</nav>
-			<section id="content" class="col-lg-8">
-				<ui:insert name="content">CONTENU</ui:insert>
-			</section>
-		</div>
-		<footer id="bottom" class="row">
-			<div class="col-lg-12">
-				<ui:insert name="bottom">BAS</ui:insert>
-			</div>
-		</footer>
-	</div>
+		<ui:insert name="content" />
+
+		<ui:include src="footer.xhtml" />
+	</f:view>
+
 
 </h:body>
 
