@@ -61,13 +61,13 @@
 	</h:form>
 
 	<h:form enctype="multipart/form-data">
-		<p:growl id="messages" showDetail="true" />
+		<p:growl id="uploadGrowl" showDetail="true" />
 
 		<p:fileUpload value="#{fileUploadBean.file}" mode="simple"
 			skinSimple="true" />
 
 		<p:commandButton value="Submit" ajax="false"
-			actionListener="#{fileUploadBean.upload}" disabled="false" />
+			actionListener="#{fileUploadBean.upload()}" update="uploadGrowl" disabled="false" />
 	</h:form>
 
 </h:body>

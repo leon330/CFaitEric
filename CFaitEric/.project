@@ -6,6 +6,7 @@
 		<project>CFaitEricEJB</project>
 		<project>CFaitEricWeb</project>
 		<project>JpaCommonsTools</project>
+		<project>JsfCommonsTools</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

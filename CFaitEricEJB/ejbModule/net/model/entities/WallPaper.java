@@ -23,8 +23,6 @@ import lombok.experimental.FieldDefaults;
 import net.commons.AbstractEntity;
 
 @SuppressWarnings("serial")
-@Getter
-@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
@@ -33,25 +31,32 @@ import net.commons.AbstractEntity;
 @Table(name = "WALLPAPER")
 public class WallPaper extends AbstractEntity {
 
+	@Getter
+	@Setter
 	@Column(nullable = false, name = "NOM")
-	String												name;
+	String									name;
 
 	/**
 	 * Fichier binaire image (Large Object Binaries). Pour certaines BDD, il
 	 * faut mieux spécifier la taille afin qu'il choisisse le bon type.
 	 */
+	@Getter
 	@Column(length = Integer.MAX_VALUE)
 	@Lob
-	byte[]												image;
+	// @Basic(fetch = FetchType.LAZY)
+	byte[]									image;
 
 	/**
 	 * Permet de définir l'extension de l'image. Exemple: pour "jpg",
 	 * "image/jpeg"
 	 */
+	@Getter
+	@Setter
 	@Column(name = "MIME_TYPE")
-	String												mimeType;
+	String									mimeType;
 
-	public static final transient Map<String, String>	acceptedMimeType	= new HashMap<String, String>();
+	public static final Map<String, String>	acceptedMimeType	= new HashMap<String, String>();
+
 	static {
 		acceptedMimeType.put("jpg", "image/jpeg");
 		acceptedMimeType.put("gif", "image/gif");

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- CUSTOM TAG qui implémente un champ de saisie
+accompagné d'un label et d'un message. -->
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:gabi="http://java.sun.com/jsf/composite/gabi">
+
+	<p:outputLabel value="#{label}" for="#{for}"
+	id="label_#{for}" />
+	
+	<ui:insert />
+	
+	<p:message for="#{for}" />
+
+</ui:composition>
