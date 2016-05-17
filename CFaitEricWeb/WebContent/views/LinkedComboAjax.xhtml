@@ -1,0 +1,48 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+
+	<div class="row">
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:panel header="Select a Location" style="margin-bottom:10px;">
+			
+				<h:panelGrid columns="2" cellpadding="5">
+				
+					<p:outputLabel for="country" value="Country: " />
+					<p:selectOneMenu id="country" value="#{dropDownView.country}"
+						><!-- style="width:150px" -->
+						<p:ajax listener="#{dropDownView.onCountryChange}" update="city" />
+						<f:selectItem itemLabel="Select Country" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{dropDownView.countries}" />
+					</p:selectOneMenu>
+
+					<p:outputLabel for="city" value="City: " />
+					<p:selectOneMenu id="city" value="#{dropDownView.city}"
+						><!-- style="width:150px" -->
+						<f:selectItem itemLabel="Select City" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{dropDownView.cities}" />
+					</p:selectOneMenu>
+					
+				</h:panelGrid>
+
+				<p:separator />
+
+				<p:commandButton value="Submit" update="msgs"
+					actionListener="#{dropDownView.displayLocation}"
+					icon="ui-icon-check" />
+					
+			</p:panel>
+		</h:form>
+	</div>
+
+</ui:composition>
