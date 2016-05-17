@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -8,9 +8,6 @@
 	xmlns:o="http://omnifaces.org/ui"
 	xmlns:of="http://omnifaces.org/functions">
 
-<h:head>
-</h:head>
-<h:body>
 	<div class="row">
 		<c:forEach var="image" items="#{contentGalleryBean.images}">
 			<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
@@ -19,5 +16,5 @@
 			</div>
 		</c:forEach>
 	</div>
-</h:body>
-</html>
+	
+</ui:composition>
