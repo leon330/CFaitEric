@@ -6,25 +6,11 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:o="http://omnifaces.org/ui"
-	xmlns:of="http://omnifaces.org/functions"
-	xmlns:gabi="http://gabi/customTags"
-	xmlns:components="http://java.sun.com/jsf/composite/gabi-components">
+	xmlns:of="http://omnifaces.org/functions">
 
 <h:head>
 </h:head>
 <h:body>
-	<components:movie-fieldset titre="Il Faut Sauver le Soldat Ryan">
-		Synopsis: sdfsdghfghsfghsghsfghsfghsghsfghsfghsfgh
-	</components:movie-fieldset>
-	<gabi:gabi-field for="prenom" label="Prenom">
-		<h:inputText id="prenom" value="eric" required="true" />
-	</gabi:gabi-field>
-	<!-- 
-	<div class="ui-grid ui-grid-responsive">
-	<div class="ui-grid-row">
-	style="width:350px;height:219px;"
-	 
-	-->
 	<div class="row">
 		<c:forEach var="image" items="#{contentGalleryBean.images}">
 			<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
@@ -33,13 +19,5 @@
 			</div>
 		</c:forEach>
 	</div>
-
-	<!-- div class="col-lg-12">
-			<h:panelGrid id="resourcePanel" border="1" columns="4" styleClass="ui-grid ui-grid-responsive ui-grid-row">
-				<c:forEach var="res" items="#{contentGalleryBean.images}">
-						<h:graphicImage styleClass="ui-grid ui-grid-responsive ui-grid-col-3" library="images" name="#{res}" />
-				</c:forEach>
-			</h:panelGrid>
-		</div-->
 </h:body>
 </html>
