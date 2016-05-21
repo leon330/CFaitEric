@@ -8,16 +8,14 @@
 	xmlns:o="http://omnifaces.org/ui"
 	xmlns:of="http://omnifaces.org/functions">
 
-	<div class="container">
-		<div class="row">
-			<c:forEach var="image" items="#{contentGalleryBean.images}">
-				<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-					<o:graphicImage value="#{image.getImage().getImage()}"
-						dataURI="true" alt="#{image.getImage().getName()}"
-						style="width:80%;" />
-				</div>
-			</c:forEach>
-		</div>
+	<div class="row">
+		<c:forEach var="image" items="#{contentGalleryBean.images}">
+			<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+				<o:graphicImage value="#{image.getImage().getImage()}"
+					dataURI="true" alt="#{image.getImage().getName()}"
+					style="width:80%;" />
+			</div>
+		</c:forEach>
 	</div>
 
 </ui:composition>

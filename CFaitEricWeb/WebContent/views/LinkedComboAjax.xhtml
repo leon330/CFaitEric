@@ -9,40 +9,42 @@
 	xmlns:of="http://omnifaces.org/functions">
 
 	<div class="row">
-		<h:form>
-			<p:growl id="msgs" showDetail="true" />
+		<div class="col-lg-12">
+			<h:form>
+				<p:growl id="msgs" showDetail="true" />
 
-			<p:panel header="Select a Location" style="margin-bottom:10px;">
-			
-				<h:panelGrid columns="2" cellpadding="5">
-				
-					<p:outputLabel for="country" value="Country: " />
-					<p:selectOneMenu id="country" value="#{dropDownView.country}"
-						><!-- style="width:150px" -->
-						<p:ajax listener="#{dropDownView.onCountryChange}" update="city" />
-						<f:selectItem itemLabel="Select Country" itemValue=""
-							noSelectionOption="true" />
-						<f:selectItems value="#{dropDownView.countries}" />
-					</p:selectOneMenu>
+				<p:panel header="Sélectionnez un lieu" style="margin-bottom:10px;">
 
-					<p:outputLabel for="city" value="City: " />
-					<p:selectOneMenu id="city" value="#{dropDownView.city}"
-						><!-- style="width:150px" -->
-						<f:selectItem itemLabel="Select City" itemValue=""
-							noSelectionOption="true" />
-						<f:selectItems value="#{dropDownView.cities}" />
-					</p:selectOneMenu>
-					
-				</h:panelGrid>
+					<h:panelGrid columns="2" cellpadding="5">
 
-				<p:separator />
+						<p:outputLabel for="country" value="Pays: " />
+						<p:selectOneMenu id="country" value="#{dropDownBean.country}">
+							<!-- style="width:150px" -->
+							<p:ajax listener="#{dropDownBean.onCountryChange}" update="city" />
+							<f:selectItem itemLabel="Sélectionnez le pays" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{dropDownBean.countries}" />
+						</p:selectOneMenu>
 
-				<p:commandButton value="Submit" update="msgs"
-					actionListener="#{dropDownView.displayLocation}"
-					icon="ui-icon-check" />
-					
-			</p:panel>
-		</h:form>
+						<p:outputLabel for="city" value="Ville: " />
+						<p:selectOneMenu id="city" value="#{dropDownBean.city}">
+							<!-- style="width:150px" -->
+							<f:selectItem itemLabel="Sélectionnez la ville" itemValue=""
+								noSelectionOption="true" />
+							<f:selectItems value="#{dropDownBean.cities}" />
+						</p:selectOneMenu>
+
+					</h:panelGrid>
+
+					<p:separator />
+
+					<p:commandButton value="Submit" update="msgs"
+						actionListener="#{dropDownBean.displayLocation}"
+						icon="ui-icon-check" />
+
+				</p:panel>
+			</h:form>
+		</div>
 	</div>
 
 </ui:composition>

@@ -5,15 +5,16 @@
 	xmlns:p="http://primefaces.org/ui"
 	template="./WEB-INF/templates/template.xhtml">
 
-	<ui:define name="stylePerso">
-		<h:outputStylesheet library="perso" name="template.css" />
-	</ui:define>
-
 	<ui:define name="titre">
 		<title>Mon template</title>
 	</ui:define>
+	
+	<ui:define name="horizontal-menu">
+		<ui:include src="views/horizontal-menu.xhtml" />
+	</ui:define>
 
 	<ui:define name="content">
+		<ui:include src="views/upload-form.xhtml" />
 		<ui:include src="views/LinkedComboAjax.xhtml" />
 		<ui:include src="views/gallerie2.xhtml" />
 	</ui:define>

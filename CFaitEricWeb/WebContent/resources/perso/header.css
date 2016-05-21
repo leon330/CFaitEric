@@ -1,0 +1,12 @@
+.header-size {
+	height: 300px;
+	width: auto;
+}
+
+.header-img {
+	background-image: url("../resources/perso/header2.jpg");
+	background-repeat: no-repeat;
+	height: 300px;
+	-webkit-background-size: cover;/* pour anciens Chrome et Safari */
+	background-size: cover;/* version standardisée */
+}

@@ -11,22 +11,30 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<h:outputStylesheet library="css" name="bootstrap.css" />
 	
-	<!-- INCLUDE -->
-	<ui:insert name="stylePerso"/>
+	<h:outputStylesheet library="perso" name="header.css" />
+	
 	<!-- INCLUDE -->
 	<ui:insert name="titre" />
 </h:head>
 
 <h:body>
-	<!-- Toute page JSF doit contenir une, et une seule, vue -->
-	<f:view>
-	<!-- Les includes sont des parties importées qui ne pourront pas être changée de l'exterieur du template -->
-		<ui:include src="../../views/header.xhtml" />
 
-		<ui:insert name="content" />
+	<div class="container-fluid">
 
-		<ui:include src="../../views/footer.xhtml" />
-	</f:view>
+		<!-- Toute page JSF doit contenir une, et une seule, vue -->
+		<f:view>
+
+			<ui:include src="../../views/header.xhtml" />
+
+			<ui:insert name="horizontal-menu" />
+
+			<ui:insert name="content" />
+
+			<ui:include src="../../views/footer.xhtml" />
+
+		</f:view>
+
+	</div>
 
 
 </h:body>
